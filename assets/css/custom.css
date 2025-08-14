@@ -1,0 +1,193 @@
+:root {
+  color-scheme: light;
+}
+body.login-page-body {
+  background: linear-gradient(to bottom, #009682, #ffffff);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Prompt", sans-serif;
+}
+body.page-background {
+  background: linear-gradient(to bottom, #e8f5e9, #ffffff);
+  font-family: "Prompt", sans-serif;
+}
+.login-card {
+  max-width: 450px;
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border: 1px solid #dee2e6;
+}
+.btn-primary-custom {
+  background-color: #198754;
+  border-color: #198754;
+}
+.btn-primary-custom:hover {
+  background-color: #157347;
+  border-color: #146c43;
+}
+.menu-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  border: 1px solid #dee2e6;
+}
+.menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.main-logo-flip {
+  animation: continuous-flip 10s linear infinite; /* หมุนโลโก้ตลอดเวลา ปรับเวลาเป็น วินาทีต่อ1 รอบ */
+}
+.main-logo-convex {
+  /* ✨ โค้ดสำหรับทำเอฟเฟกต์นูน */
+  filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.4))
+    drop-shadow(-2px -2px 3px rgba(255, 255, 255, 0.3));
+}
+.main-logo-convex-coin {
+  /* 🪙 โค้ดสำหรับทำเอฟเฟกต์เหรียญ */
+  border-radius: 50%;
+  border: 2px solid #bbb;
+  background-color: #e0e0e0;
+  box-shadow: 
+      /* เงาด้านใน (ส่วนมืด) */ inset 3px 3px 7px
+      rgba(0, 0, 0, 0.4),
+    /* ไฮไลท์ด้านใน (ส่วนสว่าง) */ inset -4px -4px 7px rgba(255, 255, 255, 0.9),
+    /* เงาด้านนอกเล็กน้อย เพื่อให้เหรียญลอยขึ้น */ 2px 2px 5px
+      rgba(0, 0, 0, 0.2);
+}
+/* สำหรับ Flip แกน Y โดยให้เริ่มหมุนจาก 0 องศา ไปจนครบ 360 องศา */
+@keyframes continuous-flip {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.logo-shake {
+  animation: shake 0.5s ease-in-out infinite;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-5px, 0);
+  }
+  20% {
+    transform: translate(5px, 0);
+  }
+  30% {
+    transform: translate(-5px, 0);
+  }
+  40% {
+    transform: translate(5px, 0);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Trick: สั่นทุก 5 วิ โดยทำ animation loop นาน 5 วิ แต่ให้สั่นแค่ช่วงต้น */
+.logo-shake-timed {
+  animation: shake-timed 3s infinite;
+}
+
+@keyframes shake-timed {
+  0% {
+    transform: translate(0, 0);
+  }
+  2% {
+    transform: translate(-5px, 0);
+  }
+  4% {
+    transform: translate(5px, 0);
+  }
+  6% {
+    transform: translate(-5px, 0);
+  }
+  8% {
+    transform: translate(5px, 0);
+  }
+  10% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* ปรับแต่งธีมของ Flatpickr ให้ดูทันสมัย (ธีมสีน้ำเงิน) */
+.flatpickr-calendar {
+    background: #2c3e50; /* สีพื้นหลังเข้ม */
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid #34495e;
+}
+
+.flatpickr-months .flatpickr-month {
+    color: #ecf0f1; /* สีตัวอักษรเดือน */
+}
+
+.flatpickr-current-month .flatpickr-monthDropdown-months,
+.flatpickr-current-month input.cur-year {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.flatpickr-weekdays {
+    background: #34495e; /* พื้นหลังหัวข้อวัน */
+}
+
+span.flatpickr-weekday {
+    color: #bdc3c7; /* สีตัวอักษรหัวข้อวัน */
+    font-weight: bold;
+}
+
+.flatpickr-day {
+    color: #ecf0f1; /* สีตัวเลขวันปกติ */
+    border: 1px solid transparent;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.flatpickr-day:hover {
+    background: #3498db; /* สีเมื่อเมาส์ชี้ */
+    border-color: #3498db;
+    color: #ffffff;
+}
+
+.flatpickr-day.today {
+    border-color: #e74c3c; /* กรอบสำหรับวันปัจจุบัน */
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange {
+    background: #2980b9; /* สีวันที่ถูกเลือก */
+    border-color: #2980b9;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.flatpickr-day.disabled {
+    color: #7f8c8d; /* สีวันที่ไม่สามารถเลือกได้ */
+}
+
+.flatpickr-time {
+    background: #2c3e50;
+}
+
+.flatpickr-time .numInput, .flatpickr-time .flatpickr-am-pm {
+    color: #ecf0f1;
+}
